@@ -1,0 +1,37 @@
+<BaseBasket :isOpen="isBasketOpen" @hide="isBasketOpen = false">
+  <nav class="container-fluid position-fixed" style="z-index: 10;" v-click-outside="hideMenu">
+    <div class="row">
+      <div class="col-12 d-block d-md-none">
+        <div class="row">
+          <div class="col-auto header-menu-more p-0" @click="isBasketOpen = !isBasketOpen" :class="{'d-none': !isBasketOpen}">
+            <img src="/assets/main/backImage.png" class="img-fluid header-menu-more-button" alt="Close basket">
+          </div>
+          <div class="col p-0">
+            <h1 class="header-title m-0">Alliance of breeders fur chinchillas</h1>
+          </div>
+          <div class="col-auto header-menu-more p-0" @click="isMenuOpen = !isMenuOpen" :class="{'d-none': isBasketOpen, 'header-basket-add': isAddProductAnimation}">
+            <img src="/assets/main/menuMobile.png" class="img-fluid header-menu-more-button" alt="Menu button">
+          </div>
+        </div>
+      </div>
+      <div class="col-12 header-menu" :class="{open: isMenuOpen}">
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <nuxt-link to="/" class="col-12 col-md header-link" @click.native="navigate">Главная</nuxt-link>
+              <nuxt-link to="/buying" class="col-12 col-md header-link" @click.native="navigate">Шиншиллы</nuxt-link>
+              <nuxt-link to="/products" class="col-12 col-md header-link" @click.native="navigate">Другие товары</nuxt-link>
+              <nuxt-link to="/information" class="col-12 col-md header-link" @click.native="navigate">О содержании</nuxt-link>
+              <nuxt-link to="/contacts" class="col-12 col-md header-link" @click.native="navigate">Контакты</nuxt-link>
+              <button @click="toggleBasket" class="d-block d-md-none col-12 col-md header-link">Корзина</button>
+            </div>
+          </div>
+          <div class="col-auto d-none d-md-block header-link p-0" @click="isBasketOpen = !isBasketOpen"
+               :class="{'header-basket-add': isAddProductAnimation}">
+            <img src="/assets/main/basket.png" class="basket-image" alt="Basket image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</BaseBasket>

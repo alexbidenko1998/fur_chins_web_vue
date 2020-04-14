@@ -1,0 +1,10 @@
+<div>
+  <div style="height: 50px;"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="buying-title col">Все стандарты линий разведения Дании, Германии, Польши, Прибалтики</h1>
+    </div>
+
+    <BuyingBlock v-for="(chinchilla, index) in chinchillas" :chinchilla="chinchilla" :index="index" :key="index"></BuyingBlock>
+  </div>
+</div>

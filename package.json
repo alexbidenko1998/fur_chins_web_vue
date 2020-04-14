@@ -1,0 +1,28 @@
+{
+  "name": "fur_chins_web",
+  "version": "1.0.0",
+  "description": "Aliance of breaders fur chinchillas",
+  "author": "Alexander Bidenko",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/yandex-metrika": "^1.0.3",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.0",
+    "node-sass": "^4.13.1",
+    "nuxt": "^2.0.0",
+    "popper.js": "^1.16.1",
+    "sass-loader": "^8.0.2",
+    "v-click-outside": "^3.0.1",
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {}
+}

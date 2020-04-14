@@ -1,0 +1,41 @@
+<div>
+  <div style="height: 50px;"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <form class="col-12 col-md-6 pt-2" @submit.prevent="sendOrderMessage">
+        <label>
+          <span>Ваше имя</span>
+          <input type="text" v-model="userName">
+        </label>
+        <label>
+          <span>Ваш номер телефона</span>
+          <input type="text" v-model="userPhone">
+        </label>
+        <label>
+          <span>Ваш email</span>
+          <input type="text" v-model="userEmail">
+        </label>
+        <label>
+          <span>Тема сообщения</span>
+          <input type="text" v-model="userTitle">
+        </label>
+        <label @click="userAddBasket = !userAddBasket">
+          <div class="checkbox">
+            <img v-if="userAddBasket" src="/assets/main/checkbox.png" class="img-fluid d-block" alt="Checkbox">
+          </div>
+          <span>Прикрепить к письму содержимое корзины</span>
+        </label>
+        <label>
+          <span>Текст сообщения</span>
+          <textarea style="height: 200px;" v-model="userMessage"></textarea>
+        </label>
+        <span class="contacts-send-button-shadow">
+        <button type="submit" class="contacts-send-button"
+                :disabled="!(!!userName && !!userPhone && !!userEmail && !!userTitle && !!userMessage)"
+        >Отправить сообщение</button>
+      </span>
+      </form>
+      <div class="col-6 p-0 d-none d-md-block" style="background: url('/assets/backcall/Image1.jpg') no-repeat center / cover"></div>
+    </div>
+  </div>
+</div>

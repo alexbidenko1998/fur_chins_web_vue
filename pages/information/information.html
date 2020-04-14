@@ -1,0 +1,31 @@
+<div>
+  <div style="height: 50px;"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div v-for="(info, index) in information" @click="openArticleAt(index)"
+               class="col-6 col-sm-3 col-md-6 information-nav-block p-0"
+               :style="{backgroundImage: 'url(' + info.image + ')'}">
+            <div class="information-nav-foreground"></div>
+            <h2 class="information-nav-title">{{info.title}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="fade pt-4" :class="{show: isShowArticle}">
+          <div v-if="!article" class="text-center">
+            <h1 class="information-title text-center">Выберите интересующий Вас раздел</h1>
+            <div style="text-align: center;">
+              <img src="/assets/main/Logo.png" class="information-logo" alt="Information default image">
+            </div>
+          </div>
+          <div v-if="!!article" style="height: 100%;">
+            <h3 class="information-title">{{article.title}}</h3>
+            <p class="information-text">{{article.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

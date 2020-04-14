@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12 col-md-6 p-0" :class="{'order-md-2': index % 2 === 1}">
+    <div :id="chinchilla.key + '-images-slider'" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div v-for="(image, index) in chinchilla.images" class="carousel-item" :class="{active: index === 0}"
+          :style="{'background-image': 'url(' + image + ')'}">
+        </div>
+      </div>
+      <template v-if="chinchilla.images.length > 1">
+        <a
+          class="carousel-control-prev"
+          :href="'#' + chinchilla.key + '-images-slider'"
+          role="button"
+          data-slide="prev"
+          aria-label="Slider to prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a
+          class="carousel-control-next"
+          :href="'#' + chinchilla.key + '-images-slider'"
+          role="button"
+          data-slide="next"
+          aria-label="Slider to next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </template>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 pt-4" :class="{'order-md-1': index % 2 === 1}">
+    <h2 class="buying-block-title my-2">{{chinchilla.text}}</h2>
+
+    <div class="row p-4">
+      <div class="col-6 p-0 costs-col">
+        <BuyingBlockVariant :keyChinchilla="chinchilla.key" :sex="'male'" :costs="chinchilla.costs.male"></BuyingBlockVariant>
+      </div>
+      <div class="col-6 p-0 costs-col">
+        <BuyingBlockVariant :keyChinchilla="chinchilla.key" :sex="'female'" :costs="chinchilla.costs.female"></BuyingBlockVariant>
+      </div>
+    </div>
+  </div>
+</div>
