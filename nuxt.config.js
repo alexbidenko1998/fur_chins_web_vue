@@ -26,6 +26,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext' },
     ],
+    script: [
+      { src: 'https://www.googleoptimize.com/optimize.js?id=OPT-M9JGJGL' },
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -69,6 +72,7 @@ export default {
         webvisor:true
       }
     ],
+    'nuxt-google-optimize',
   ],
   /*
   ** Axios module configuration
@@ -84,6 +88,6 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
   }
 }

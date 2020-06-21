@@ -11,7 +11,10 @@ export default {
         {hid: 'description', name: 'description', content: 'Купить шиншилл, меховых шиншилл прошедших оценку экспертов (бонитироваку), получивших бронзу, серебро или золото на выставках'},
         {hid: 'og:title', property: 'og:title', content: 'Aliance of breaders fur chinchillas - Купить шиншиллу'},
         {hid: 'og:description', property: 'og:description', content: 'Купить шиншилл, меховых шиншилл прошедших оценку экспертов (бонитироваку), получивших бронзу, серебро или золото на выставках'}
-      ]
+      ],
+      bodyAttrs: {
+        class: this.$exp.$classes.join(' ')
+      },
     };
   },
 

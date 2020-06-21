@@ -1,6 +1,7 @@
 const state = () => ({
   information: [
     {
+      id: 1,
       "title": "Клетки",
       "image": "/assets/info/Image1.jpeg",
       "content": {
@@ -9,6 +10,7 @@ const state = () => ({
       }
     },
     {
+      id: 2,
       "title": "Корма",
       "image": "/assets/info/Image2.JPG",
       "content": {
@@ -17,6 +19,7 @@ const state = () => ({
       }
     },
     {
+      id: 3,
       "title": "Температура",
       "image": "/assets/info/Image3.jpeg",
       "content": {
@@ -25,6 +28,7 @@ const state = () => ({
       }
     },
     {
+      id: 4,
       "title": "Купание",
       "image": "/assets/info/Image4.jpg",
       "content": {
@@ -33,6 +37,7 @@ const state = () => ({
       }
     },
     {
+      id: 5,
       "title": "Разведение",
       "image": "/assets/info/Image5.jpg",
       "content": {
@@ -41,6 +46,7 @@ const state = () => ({
       }
     },
     {
+      id: 6,
       "title": "Беременность",
       "image": "/assets/info/Image6.jpg",
       "content": {
@@ -49,6 +55,7 @@ const state = () => ({
       }
     },
     {
+      id: 7,
       "title": "Таблица веса",
       "image": "/assets/info/Image7.jpg",
       "content": {
@@ -57,6 +64,7 @@ const state = () => ({
       }
     },
     {
+      id: 8,
       "title": "Расчесывание",
       "image": "/assets/info/Image8.jpeg",
       "content": {

@@ -16,7 +16,7 @@ export default {
 
   data() {
     return {
-      article: null,
+      articleId: null,
       isShowArticle: true,
     };
   },
@@ -25,7 +25,7 @@ export default {
     openArticleAt(index) {
       this.isShowArticle = false;
       setTimeout(() => {
-        this.article = this.information[index].content;
+        this.articleId = this.information[index].id;
         this.isShowArticle = true;
       }, 150);
     },

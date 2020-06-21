@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+        with:
+          ref: master
+      - name: Prepare SSH
+        run: |
+          sudo apt-get install -y rsync sshpass
+          mkdir -p ~/.ssh/
+          echo "${{secrets.SSH_HOST}}" > ~/.ssh/known_hosts
+          echo -e 'Host *\n\tStrictHostKeyChecking no\n\n' > ~/.ssh/config
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Packages
+        run: npm i
+      - name: Build artifacts
+        run: |
+          npm run generate
+      - name: Deploy
+        run: rsync -e 'sshpass -p ${{secrets.SSH_PASS}} ssh' -avzP --delete-after dist/ ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/home/c/cp36696/fur-chins.ru/public_html
+        shell: bash
